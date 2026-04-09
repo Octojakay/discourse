@@ -36,11 +36,9 @@ export default class OctojaSidebarFooter extends Component {
   <template>
     {{#if this.shouldRender}}
       <div class="octoja-sidebar-meta">
-        {{#if this.interfaceColor.selectorAvailableInSidebar}}
-          <div class="octoja-sidebar-meta__mode">
-            <InterfaceColorSelector />
-          </div>
-        {{/if}}
+        <div class="octoja-sidebar-meta__mode">
+          <InterfaceColorSelector />
+        </div>
 
         {{#if this.currentUser}}
           <a

@@ -148,11 +148,9 @@ export default class OctojaCollapsedRail extends Component {
         </div>
 
         <div class="octoja-collapsed-rail__footer">
-          {{#if this.interfaceColor.selectorAvailableInSidebar}}
-            <div class="octoja-collapsed-rail__mode">
-              <InterfaceColorSelector />
-            </div>
-          {{/if}}
+          <div class="octoja-collapsed-rail__mode">
+            <InterfaceColorSelector />
+          </div>
 
           {{#if this.currentUser}}
             <a
