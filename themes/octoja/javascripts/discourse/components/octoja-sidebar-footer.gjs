@@ -36,32 +36,34 @@ export default class OctojaSidebarFooter extends Component {
   <template>
     {{#if this.shouldRender}}
       <div class="octoja-sidebar-meta">
-        <div class="octoja-sidebar-meta__mode">
-          <InterfaceColorSelector />
-        </div>
+        <div class="octoja-sidebar-meta__footer">
+          {{#if this.currentUser}}
+            <a
+              class="octoja-sidebar-profile"
+              href={{this.profileHref}}
+              data-user-card={{this.currentUser.username}}
+              aria-label={{this.primaryLabel}}
+            >
+              <span class="octoja-sidebar-profile__avatar">
+                {{avatar
+                  this.currentUser
+                  avatarTemplatePath="avatar_template"
+                  usernamePath="username"
+                  namePath="name"
+                  imageSize="large"
+                }}
+              </span>
+              <span class="octoja-sidebar-profile__text">
+                <span class="octoja-sidebar-profile__name">{{this.primaryLabel}}</span>
+                <span class="octoja-sidebar-profile__meta">{{this.secondaryLabel}}</span>
+              </span>
+            </a>
+          {{/if}}
 
-        {{#if this.currentUser}}
-          <a
-            class="octoja-sidebar-profile"
-            href={{this.profileHref}}
-            data-user-card={{this.currentUser.username}}
-            aria-label={{this.primaryLabel}}
-          >
-            <span class="octoja-sidebar-profile__avatar">
-              {{avatar
-                this.currentUser
-                avatarTemplatePath="avatar_template"
-                usernamePath="username"
-                namePath="name"
-                imageSize="large"
-              }}
-            </span>
-            <span class="octoja-sidebar-profile__text">
-              <span class="octoja-sidebar-profile__name">{{this.primaryLabel}}</span>
-              <span class="octoja-sidebar-profile__meta">{{this.secondaryLabel}}</span>
-            </span>
-          </a>
-        {{/if}}
+          <div class="octoja-sidebar-meta__mode">
+            <InterfaceColorSelector />
+          </div>
+        </div>
       </div>
     {{/if}}
   </template>
