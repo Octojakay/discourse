@@ -52,14 +52,19 @@ body:not(.mobile-view) .d-header-wrap {
 
 .sidebar-wrapper {
   top: 0;
-  border-right: 1px solid var(--primary-low);
-  background: var(--octo-sidebar-surface);
+  border-right: 0;
+  background: transparent;
   height: 100dvh;
+}
+
+.sidebar-wrapper:empty {
+  pointer-events: none;
 }
 
 .sidebar-wrapper .sidebar-container {
   min-height: 100%;
   background: var(--octo-sidebar-surface);
+  border-right: 1px solid var(--primary-low);
 }
 
 .sidebar-wrapper .sidebar-sections {
