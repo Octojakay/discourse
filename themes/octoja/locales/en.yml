@@ -1,0 +1,5 @@
+en:
+  collapse_sidebar: "Collapse sidebar"
+  expand_sidebar: "Expand sidebar"
+  theme_metadata:
+    description: "A Discourse theme styled to feel closer to the octoja RMM product."

@@ -167,6 +167,7 @@ header.d-header {
   border-radius: var(--octo-r-sm);
 }
 
+.sidebar-collapse-trigger.btn,
 .sidebar-collapse-trigger .btn {
   width: var(--octo-control-height);
   height: var(--octo-control-height);
@@ -177,6 +178,7 @@ header.d-header {
   color: var(--primary-medium);
 }
 
+.sidebar-collapse-trigger.btn:hover,
 .sidebar-collapse-trigger .btn:hover {
   background: var(--octo-brand-soft);
   color: var(--tertiary);

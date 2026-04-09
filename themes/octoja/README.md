@@ -38,8 +38,10 @@ This repo now uses Discourse's native theme entrypoints instead of a monolithic 
 
 ## Best-Practice Decisions In This Refactor
 
-- Native Discourse light/dark mode is now the source of truth.
-  The theme no longer ships a custom color-mode toggle or custom `data-octo-mode` state.
+- Native Discourse light/dark mode is still the source of truth.
+  The theme uses Discourse's own `InterfaceColorSelector` as a sidebar fallback when the site setting does not already expose it in the sidebar or header.
+- Sidebar collapse is restored as a thin theme control.
+  It calls Discourse's existing application sidebar toggle instead of maintaining a separate sidebar state.
 - The repo is now the source of truth for packaging.
   `build-discourse-theme.js` packages this directory directly instead of generating a second copy of the theme in code.
 - CSS is split by concern.

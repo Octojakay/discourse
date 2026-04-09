@@ -1,0 +1,5 @@
+de:
+  collapse_sidebar: "Seitenleiste einklappen"
+  expand_sidebar: "Seitenleiste ausklappen"
+  theme_metadata:
+    description: "Ein Discourse-Theme, das sich visuell staerker am octoja-RMM-Produkt orientiert."
