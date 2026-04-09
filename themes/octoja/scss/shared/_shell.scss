@@ -476,7 +476,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 .octoja-sidebar-edge-toggle {
   position: fixed;
   top: 3.55rem;
-  inset-inline-start: calc(var(--d-sidebar-width) - 0.72rem);
+  inset-inline-start: calc(var(--d-sidebar-width) - 0.82rem);
   z-index: 401;
   transform: none;
   transition: inset-inline-start 180ms ease;
@@ -486,7 +486,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 .octoja-sidebar-edge-toggle.is-collapsed {
   position: fixed;
   top: 3.55rem;
-  inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.72rem);
+  inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.82rem);
   transform: none;
 }
 
