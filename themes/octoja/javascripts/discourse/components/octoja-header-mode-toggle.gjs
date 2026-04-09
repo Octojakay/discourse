@@ -2,13 +2,18 @@ import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import DButton from "discourse/components/d-button";
+import cookie from "discourse/lib/cookie";
 import {
   loadColorSchemeStylesheet,
   updateColorSchemeCookie,
 } from "discourse/lib/color-scheme-picker";
+import { reload } from "discourse/helpers/page-reloader";
 import { currentThemeId, listThemes } from "discourse/lib/theme-selector";
 import { i18n } from "discourse-i18n";
 import { themePrefix } from "virtual:theme";
+
+const FORCED_COLOR_MODE_COOKIE = "forced_color_mode";
+const COOKIE_EXPIRY_DAYS = 365;
 
 export default class OctojaHeaderModeToggle extends Component {
   @service interfaceColor;
@@ -86,11 +91,26 @@ export default class OctojaHeaderModeToggle extends Component {
   async toggleMode() {
     await this.ensureThemeStylesheets();
 
-    if (this.isDark) {
+    const targetMode = this.isDark ? "light" : "dark";
+
+    if (this.hasThemeSchemePair) {
+      updateColorSchemeCookie(this.lightSchemeId);
+      updateColorSchemeCookie(this.darkSchemeId, { dark: true });
+      this.session.set("darkModeAvailable", true);
+    }
+
+    cookie(FORCED_COLOR_MODE_COOKIE, targetMode, {
+      path: "/",
+      expires: COOKIE_EXPIRY_DAYS,
+    });
+
+    if (targetMode === "light") {
       this.interfaceColor.forceLightMode();
     } else {
       this.interfaceColor.forceDarkMode();
     }
+
+    reload();
   }
 
   <template>
