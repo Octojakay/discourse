@@ -118,6 +118,7 @@ body:not(.mobile-view) .d-header-wrap {
   border-radius: var(--octo-r-sm);
   font-size: 0.8125rem;
   border: 1px solid transparent;
+  color: dark-light-choose(#1a1a1a, #ffffff);
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
@@ -126,7 +127,7 @@ body:not(.mobile-view) .d-header-wrap {
 .sidebar-section-message-btn:hover,
 .sidebar-footer-wrapper .btn:hover {
   background: var(--octo-surface-2);
-  color: var(--primary);
+  color: dark-light-choose(#1a1a1a, #ffffff);
   text-decoration: none;
 }
 
@@ -134,7 +135,7 @@ body:not(.mobile-view) .d-header-wrap {
 .sidebar-section-link-wrapper .active {
   background: var(--octo-brand-soft);
   border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
-  color: var(--primary);
+  color: dark-light-choose(#1a1a1a, #ffffff);
   font-weight: 500;
 }
 
@@ -278,7 +279,7 @@ body:not(.mobile-view) .sidebar-footer-wrapper {
 }
 
 .octoja-sidebar-profile__name {
-  color: var(--primary);
+  color: dark-light-choose(#1a1a1a, #ffffff);
   font-size: 0.875rem;
   font-weight: 600;
 }
