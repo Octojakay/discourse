@@ -1,7 +1,5 @@
 en:
   collapse_sidebar: "Collapse sidebar"
   expand_sidebar: "Expand sidebar"
-  switch_to_dark: "Switch to dark mode"
-  switch_to_light: "Switch to light mode"
   theme_metadata:
     description: "A Discourse theme styled to feel closer to the octoja RMM product."

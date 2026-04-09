@@ -37,26 +37,6 @@ header.d-header {
   background: var(--octo-brand-soft);
 }
 
-.d-header-icons .octoja-header-mode-toggle__button.btn {
-  border: 1px solid var(--primary-low);
-  background: var(--octo-surface-2);
-  color: var(--primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.d-header-icons .octoja-header-mode-toggle__button.btn .d-icon {
-  transform: translateX(1px);
-}
-
-.d-header-icons .octoja-header-mode-toggle__button.btn:hover {
-  background: var(--octo-brand-soft);
-  border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
-  color: var(--tertiary);
-}
-
 .d-header .btn {
   box-shadow: none;
 }
