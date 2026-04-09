@@ -1,25 +1,25 @@
 import Component from "@glimmer/component";
-import { getOwner } from "@ember/owner";
 import { service } from "@ember/service";
+import {
+  applicationControllerFor,
+  expandedDesktopSidebar,
+  sidebarLogoUrl,
+} from "../lib/octoja-sidebar";
 
 export default class OctojaSidebarBrand extends Component {
   @service site;
   @service siteSettings;
 
   get applicationController() {
-    return getOwner(this).lookup("controller:application");
+    return applicationControllerFor(this);
   }
 
   get shouldRender() {
-    return (
-      this.site.desktopView &&
-      this.applicationController?.sidebarEnabled &&
-      this.applicationController?.showSidebar
-    );
+    return expandedDesktopSidebar(this.site, this.applicationController);
   }
 
   get logoUrl() {
-    return this.siteSettings.site_logo_url || this.siteSettings.site_logo_small_url;
+    return sidebarLogoUrl(this.siteSettings);
   }
 
   <template>

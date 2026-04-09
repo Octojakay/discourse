@@ -1,112 +1,43 @@
 import Component from "@glimmer/component";
 import avatar from "discourse/helpers/avatar";
 import InterfaceColorSelector from "discourse/components/interface-color-selector";
-import { getOwner } from "@ember/owner";
 import { service } from "@ember/service";
 import icon from "discourse/helpers/d-icon";
-import { i18n } from "discourse-i18n";
+import {
+  applicationControllerFor,
+  collapsedDesktopSidebar,
+  collapsedRailItems,
+  sidebarLogoUrl,
+  sidebarProfile,
+} from "../lib/octoja-sidebar";
 
 export default class OctojaCollapsedRail extends Component {
   @service currentUser;
   @service router;
   @service site;
   @service siteSettings;
-  @service interfaceColor;
 
   get applicationController() {
-    return getOwner(this).lookup("controller:application");
+    return applicationControllerFor(this);
   }
 
   get shouldRender() {
-    return (
-      this.site.desktopView &&
-      this.applicationController?.sidebarEnabled &&
-      !this.applicationController?.showSidebar
-    );
+    return collapsedDesktopSidebar(this.site, this.applicationController);
   }
 
   get logoUrl() {
-    return (
-      this.siteSettings.site_logo_small_url || this.siteSettings.site_logo_url
-    );
+    return sidebarLogoUrl(this.siteSettings, { collapsed: true });
   }
 
-  get currentPath() {
-    return this.router.currentURL || "/";
-  }
-
-  get currentUsername() {
-    return this.currentUser?.username_lower || this.currentUser?.username;
-  }
-
-  isActive(prefixes) {
-    return prefixes.some(
-      (prefix) =>
-        this.currentPath === prefix ||
-        (prefix !== "/" && this.currentPath.startsWith(prefix))
-    );
+  get profile() {
+    return sidebarProfile(this.currentUser);
   }
 
   get items() {
-    const items = [
-      {
-        key: "topics",
-        icon: "layer-group",
-        href: "/latest",
-        prefixes: ["/", "/latest", "/new", "/unread", "/top", "/hot"],
-        title: i18n("sidebar.sections.community.links.topics.title"),
-      },
-      {
-        key: "my-posts",
-        icon: "user",
-        href: "/my/activity",
-        prefixes: [
-          "/my/activity",
-          this.currentUsername && `/u/${this.currentUsername}/activity`,
-        ].filter(Boolean),
-        title: i18n("sidebar.sections.community.links.my_posts.title"),
-        visible: !!this.currentUser,
-      },
-      {
-        key: "my-messages",
-        icon: "inbox",
-        href: "/my/messages",
-        prefixes: [
-          "/my/messages",
-          this.currentUsername && `/u/${this.currentUsername}/messages`,
-        ].filter(Boolean),
-        title: i18n("sidebar.sections.community.links.my_messages.title"),
-        visible: !!this.currentUser?.can_send_private_messages,
-      },
-      {
-        key: "review",
-        icon: "flag",
-        href: "/review",
-        prefixes: ["/review"],
-        title: i18n("sidebar.sections.community.links.review.title"),
-        visible: !!this.currentUser?.can_review,
-      },
-      {
-        key: "admin",
-        icon: "wrench",
-        href: "/admin",
-        prefixes: ["/admin"],
-        title: i18n("sidebar.sections.community.links.admin.content"),
-        visible: !!this.currentUser?.staff,
-      },
-      {
-        key: "invite",
-        icon: "paper-plane",
-        href: "/new-invite",
-        prefixes: ["/new-invite", "/invites"],
-        title: i18n("sidebar.sections.community.links.invite.title"),
-        visible: !!this.currentUser?.can_invite_to_forum,
-      },
-    ];
-
-    return items
-      .filter((item) => item.visible !== false)
-      .map((item) => ({ ...item, active: this.isActive(item.prefixes) }));
+    return collapsedRailItems({
+      currentPath: this.router.currentURL || "/",
+      currentUser: this.currentUser,
+    });
   }
 
   <template>
@@ -155,9 +86,9 @@ export default class OctojaCollapsedRail extends Component {
           {{#if this.currentUser}}
             <a
               class="octoja-collapsed-rail__profile"
-              href={{this.currentUser.path}}
-              data-user-card={{this.currentUser.username}}
-              aria-label={{this.currentUser.username}}
+              href={{this.profile.href}}
+              data-user-card={{this.profile.username}}
+              aria-label={{this.profile.primaryLabel}}
             >
               {{avatar
                 this.currentUser

@@ -1,36 +1,27 @@
 import Component from "@glimmer/component";
-import { getOwner } from "@ember/owner";
 import avatar from "discourse/helpers/avatar";
 import InterfaceColorSelector from "discourse/components/interface-color-selector";
 import { service } from "@ember/service";
+import {
+  applicationControllerFor,
+  expandedDesktopSidebar,
+  sidebarProfile,
+} from "../lib/octoja-sidebar";
 
 export default class OctojaSidebarFooter extends Component {
   @service currentUser;
-  @service interfaceColor;
   @service site;
 
   get applicationController() {
-    return getOwner(this).lookup("controller:application");
+    return applicationControllerFor(this);
   }
 
   get shouldRender() {
-    return (
-      this.site.desktopView &&
-      this.applicationController?.sidebarEnabled &&
-      this.applicationController?.showSidebar
-    );
+    return expandedDesktopSidebar(this.site, this.applicationController);
   }
 
-  get profileHref() {
-    return this.currentUser?.path || "/my/preferences/account";
-  }
-
-  get primaryLabel() {
-    return this.currentUser?.name || this.currentUser?.username;
-  }
-
-  get secondaryLabel() {
-    return this.currentUser?.email || `@${this.currentUser?.username || ""}`;
+  get profile() {
+    return sidebarProfile(this.currentUser);
   }
 
   <template>
@@ -40,9 +31,9 @@ export default class OctojaSidebarFooter extends Component {
           {{#if this.currentUser}}
             <a
               class="octoja-sidebar-profile"
-              href={{this.profileHref}}
-              data-user-card={{this.currentUser.username}}
-              aria-label={{this.primaryLabel}}
+              href={{this.profile.href}}
+              data-user-card={{this.profile.username}}
+              aria-label={{this.profile.primaryLabel}}
             >
               <span class="octoja-sidebar-profile__avatar">
                 {{avatar
@@ -54,8 +45,8 @@ export default class OctojaSidebarFooter extends Component {
                 }}
               </span>
               <span class="octoja-sidebar-profile__text">
-                <span class="octoja-sidebar-profile__name">{{this.primaryLabel}}</span>
-                <span class="octoja-sidebar-profile__meta">{{this.secondaryLabel}}</span>
+                <span class="octoja-sidebar-profile__name">{{this.profile.primaryLabel}}</span>
+                <span class="octoja-sidebar-profile__meta">{{this.profile.secondaryLabel}}</span>
               </span>
             </a>
           {{/if}}

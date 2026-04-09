@@ -1,20 +1,23 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { getOwner } from "@ember/owner";
 import { service } from "@ember/service";
 import DButton from "discourse/components/d-button";
 import { i18n } from "discourse-i18n";
 import { themePrefix } from "virtual:theme";
+import {
+  applicationControllerFor,
+  desktopSidebarEnabled,
+} from "../lib/octoja-sidebar";
 
 export default class OctojaSidebarEdgeToggle extends Component {
   @service site;
 
   get applicationController() {
-    return getOwner(this).lookup("controller:application");
+    return applicationControllerFor(this);
   }
 
   get shouldRender() {
-    return this.site.desktopView && this.applicationController?.sidebarEnabled;
+    return desktopSidebarEnabled(this.site, this.applicationController);
   }
 
   get sidebarCollapsed() {
