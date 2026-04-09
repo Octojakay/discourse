@@ -473,18 +473,18 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 }
 
 .octoja-sidebar-edge-toggle {
-  position: absolute;
-  top: 0.75rem;
-  inset-inline-start: 0;
+  position: fixed;
+  top: 1rem;
+  inset-inline-start: calc(var(--d-sidebar-width) - 0.5rem);
   z-index: 401;
-  transform: translateX(calc(-100% - 1rem));
-  transition: transform 180ms ease;
+  transform: none;
+  transition: inset-inline-start 180ms ease;
   pointer-events: none;
 }
 
 .octoja-sidebar-edge-toggle.is-collapsed {
   position: fixed;
-  top: calc(var(--main-outlet-offset) + 0.75rem);
+  top: 1rem;
   inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.5rem);
   transform: none;
 }
@@ -504,7 +504,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 }
 
 .octoja-sidebar-edge-toggle__button.btn .d-icon {
-  transform: translateX(2px);
+  transform: none;
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {
