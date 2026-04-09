@@ -44,14 +44,6 @@ export default class OctojaHeaderModeToggle extends Component {
     );
   }
 
-  get shouldRender() {
-    return (
-      this.interfaceColor.selectorAvailable ||
-      this.hasThemeSchemePair ||
-      (!!this.lightSchemeLink && !!this.darkSchemeLink)
-    );
-  }
-
   get isDark() {
     if (this.darkSchemeLink) {
       return this.darkSchemeLink.media === "all";
@@ -102,16 +94,14 @@ export default class OctojaHeaderModeToggle extends Component {
   }
 
   <template>
-    {{#if this.shouldRender}}
-      <li class="header-dropdown-toggle octoja-header-mode-toggle">
-        <DButton
-          @action={{this.toggleMode}}
-          @icon={{this.icon}}
-          @translatedTitle={{this.title}}
-          @translatedAriaLabel={{this.title}}
-          class="btn no-text btn-icon btn-flat icon octoja-header-mode-toggle__button"
-        />
-      </li>
-    {{/if}}
+    <li class="header-dropdown-toggle octoja-header-mode-toggle">
+      <DButton
+        @action={{this.toggleMode}}
+        @icon={{this.icon}}
+        @translatedTitle={{this.title}}
+        @translatedAriaLabel={{this.title}}
+        class="btn no-text btn-icon btn-flat icon octoja-header-mode-toggle__button"
+      />
+    </li>
   </template>
 }

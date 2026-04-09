@@ -41,6 +41,7 @@ header.d-header {
   border: 1px solid var(--primary-low);
   background: var(--octo-surface-2);
   color: var(--primary);
+  display: inline-flex;
 }
 
 .d-header-icons .octoja-header-mode-toggle__button.btn:hover {
@@ -179,16 +180,23 @@ header.d-header {
   border-radius: var(--octo-r-sm);
 }
 
+body.has-sidebar-page #main-outlet-wrapper {
+  position: relative;
+}
+
 .octoja-sidebar-edge-toggle {
-  position: fixed;
+  position: absolute;
   top: calc(var(--header-offset, var(--octo-topbar-height)) + 0.75rem);
-  inset-inline-start: calc(var(--d-sidebar-width) + 0.35rem);
+  inset-inline-start: calc(
+    var(--d-sidebar-width) - (var(--octo-control-height) / 2)
+  );
   z-index: 401;
   transition: inset-inline-start 180ms ease;
+  pointer-events: none;
 }
 
 .octoja-sidebar-edge-toggle.is-collapsed {
-  inset-inline-start: 0.75rem;
+  inset-inline-start: calc(var(--space-2) - (var(--octo-control-height) / 2));
 }
 
 .octoja-sidebar-edge-toggle__button.btn {
@@ -201,6 +209,7 @@ header.d-header {
   background: var(--octo-surface-1);
   color: var(--primary);
   box-shadow: 0 8px 22px rgb(0 0 0 / 0.18);
+  pointer-events: auto;
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {
