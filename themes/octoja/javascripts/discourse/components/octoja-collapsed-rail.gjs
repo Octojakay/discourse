@@ -1,4 +1,6 @@
 import Component from "@glimmer/component";
+import avatar from "discourse/helpers/avatar";
+import InterfaceColorSelector from "discourse/components/interface-color-selector";
 import { getOwner } from "@ember/owner";
 import { service } from "@ember/service";
 import icon from "discourse/helpers/d-icon";
@@ -9,6 +11,7 @@ export default class OctojaCollapsedRail extends Component {
   @service router;
   @service site;
   @service siteSettings;
+  @service interfaceColor;
 
   get applicationController() {
     return getOwner(this).lookup("controller:application");
@@ -142,6 +145,31 @@ export default class OctojaCollapsedRail extends Component {
               {{icon item.icon}}
             </a>
           {{/each}}
+        </div>
+
+        <div class="octoja-collapsed-rail__footer">
+          {{#if this.interfaceColor.selectorAvailableInSidebar}}
+            <div class="octoja-collapsed-rail__mode">
+              <InterfaceColorSelector />
+            </div>
+          {{/if}}
+
+          {{#if this.currentUser}}
+            <a
+              class="octoja-collapsed-rail__profile"
+              href={{this.currentUser.path}}
+              data-user-card={{this.currentUser.username}}
+              aria-label={{this.currentUser.username}}
+            >
+              {{avatar
+                this.currentUser
+                avatarTemplatePath="avatar_template"
+                usernamePath="username"
+                namePath="name"
+                imageSize="large"
+              }}
+            </a>
+          {{/if}}
         </div>
       </nav>
     {{/if}}

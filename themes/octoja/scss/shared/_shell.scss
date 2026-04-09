@@ -8,6 +8,15 @@ header.d-header {
   -webkit-backdrop-filter: none;
 }
 
+body:not(.mobile-view) {
+  --main-outlet-offset: 0px;
+  --header-offset: 0px;
+}
+
+body:not(.mobile-view) .d-header-wrap {
+  display: none;
+}
+
 .d-header .wrap {
   height: 100%;
   max-width: 100%;
@@ -42,11 +51,14 @@ header.d-header {
 }
 
 .sidebar-wrapper {
+  top: 0;
   border-right: 1px solid var(--primary-low);
   background: var(--octo-sidebar-surface);
+  height: 100dvh;
 }
 
 .sidebar-wrapper .sidebar-container {
+  min-height: 100%;
   background: var(--octo-sidebar-surface);
 }
 
@@ -56,6 +68,29 @@ header.d-header {
 
 .sidebar-section-wrapper {
   margin-bottom: 10px;
+}
+
+.octoja-sidebar-brand {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+  margin: 0 0.5rem 0.75rem;
+  padding: 0 0.375rem 0.875rem;
+  border-bottom: 1px solid var(--primary-low);
+}
+
+.octoja-sidebar-brand__logo {
+  width: auto;
+  max-width: 8.5rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.octoja-sidebar-brand__fallback {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .sidebar-section-header {
@@ -153,6 +188,92 @@ header.d-header {
   border-top: 1px solid var(--primary-low);
 }
 
+body:not(.mobile-view) .sidebar-footer-wrapper {
+  display: none;
+}
+
+.octoja-sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding: 0.875rem 0.75rem 1rem;
+  border-top: 1px solid var(--primary-low);
+  background: var(--octo-sidebar-surface);
+}
+
+.octoja-sidebar-meta__mode {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.octoja-sidebar-meta__mode .interface-color-selector {
+  display: inline-flex;
+}
+
+.octoja-sidebar-meta__mode .interface-color-selector .btn {
+  width: var(--octo-control-height);
+  min-width: var(--octo-control-height);
+  height: var(--octo-control-height);
+  border-radius: var(--octo-r-sm);
+  border: 1px solid var(--primary-low);
+  background: var(--octo-surface-2);
+}
+
+.octoja-sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.5rem;
+  border-radius: var(--octo-r-md);
+  color: var(--primary);
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.octoja-sidebar-profile:hover {
+  background: var(--octo-surface-2);
+  text-decoration: none;
+}
+
+.octoja-sidebar-profile__avatar,
+.octoja-collapsed-rail__profile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.octoja-sidebar-profile__avatar .avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.octoja-sidebar-profile__text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.octoja-sidebar-profile__name,
+.octoja-sidebar-profile__meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.octoja-sidebar-profile__name {
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.octoja-sidebar-profile__meta {
+  color: var(--primary-medium);
+  font-size: 0.75rem;
+}
+
 .sidebar-footer-wrapper .sidebar-footer-container {
   padding: 8px 0 max(env(safe-area-inset-bottom), 0.5rem);
 }
@@ -186,11 +307,11 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
 
 .octoja-collapsed-rail {
   position: fixed;
-  top: var(--main-outlet-offset);
+  top: 0;
   inset-inline-start: 0;
   z-index: 399;
   width: var(--octo-collapsed-rail-width);
-  height: calc(var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px));
+  height: 100dvh;
   padding: 12px 0 16px;
   display: flex;
   flex-direction: column;
@@ -235,6 +356,16 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
   gap: 6px;
 }
 
+.octoja-collapsed-rail__footer {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
 .octoja-collapsed-rail__link {
   width: 40px;
   height: 40px;
@@ -258,6 +389,32 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
 
 .octoja-collapsed-rail__link .d-icon {
   font-size: 1rem;
+}
+
+.octoja-collapsed-rail__mode .interface-color-selector {
+  display: inline-flex;
+}
+
+.octoja-collapsed-rail__mode .interface-color-selector .btn,
+.octoja-collapsed-rail__profile {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--octo-r-md);
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+.octoja-collapsed-rail__mode .interface-color-selector .btn:hover,
+.octoja-collapsed-rail__profile:hover {
+  background: var(--octo-surface-2);
+  text-decoration: none;
+}
+
+.octoja-collapsed-rail__profile .avatar {
+  width: 2rem;
+  height: 2rem;
 }
 
 .octoja-sidebar-edge-toggle {
