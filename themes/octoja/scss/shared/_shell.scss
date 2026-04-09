@@ -225,7 +225,7 @@ body:not(.has-sidebar-page) #main-outlet {
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {
-  background: var(--octo-brand-soft);
+  background: var(--octo-surface-2);
   border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
   color: var(--tertiary);
   opacity: 1;
