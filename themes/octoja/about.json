@@ -3,6 +3,7 @@
   "about_url": null,
   "license_url": null,
   "modifiers": {
+    "only_theme_color_schemes": true,
     "svg_icons": [
       "sun",
       "moon",
@@ -11,19 +12,6 @@
     ]
   },
   "color_schemes": {
-    "octoja Dark": {
-      "primary": "FAFAFA",
-      "secondary": "1A1A1A",
-      "tertiary": "7B61FF",
-      "quaternary": "A89FFF",
-      "header_background": "202020",
-      "header_primary": "FAFAFA",
-      "highlight": "2D2460",
-      "danger": "EF4444",
-      "success": "22C55E",
-      "love": "7B61FF",
-      "selected": "2D2460"
-    },
     "octoja Light": {
       "primary": "1A1A1A",
       "secondary": "FFFFFF",
@@ -36,6 +24,19 @@
       "success": "16A34A",
       "love": "7B61FF",
       "selected": "EDE9FF"
+    },
+    "octoja Dark": {
+      "primary": "FAFAFA",
+      "secondary": "1A1A1A",
+      "tertiary": "7B61FF",
+      "quaternary": "A89FFF",
+      "header_background": "202020",
+      "header_primary": "FAFAFA",
+      "highlight": "2D2460",
+      "danger": "EF4444",
+      "success": "22C55E",
+      "love": "7B61FF",
+      "selected": "2D2460"
     }
   }
 }
