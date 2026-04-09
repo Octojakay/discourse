@@ -474,8 +474,8 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 
 .octoja-sidebar-edge-toggle {
   position: fixed;
-  top: 1rem;
-  inset-inline-start: calc(var(--d-sidebar-width) - 0.5rem);
+  top: 1.9rem;
+  inset-inline-start: calc(var(--d-sidebar-width) - 0.7rem);
   z-index: 401;
   transform: none;
   transition: inset-inline-start 180ms ease;
@@ -484,8 +484,8 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 
 .octoja-sidebar-edge-toggle.is-collapsed {
   position: fixed;
-  top: 1rem;
-  inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.5rem);
+  top: 1.9rem;
+  inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.7rem);
   transform: none;
 }
 
@@ -504,7 +504,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 }
 
 .octoja-sidebar-edge-toggle__button.btn .d-icon {
-  transform: none;
+  transform: translateX(2px);
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {
