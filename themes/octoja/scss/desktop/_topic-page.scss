@@ -1,9 +1,9 @@
 .topic-area {
-  gap: 20px;
+  gap: 16px;
 }
 
 #topic-title {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 #topic-title .category-breadcrumb,
@@ -12,22 +12,21 @@
 }
 
 #topic-title h1 {
-  font-size: 1.75rem;
+  font-size: 1.625rem;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .topic-post {
   border: 1px solid var(--primary-low);
   border-radius: var(--octo-r-lg);
-  box-shadow: none;
   background: var(--octo-surface-1);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
 }
 
 .topic-post article {
-  padding: 18px;
+  padding: 16px;
 }
 
 .topic-body {
@@ -43,7 +42,7 @@
   border: 1px dashed var(--primary-low);
   border-radius: var(--octo-r-lg);
   background: var(--octo-surface-1);
-  padding: 10px 14px;
+  padding: 10px 12px;
 }
 
 .small-action .small-action-desc {
@@ -60,7 +59,7 @@
 
 .timeline-container .topic-timeline {
   border: 1px solid var(--primary-low);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
 }
 
 .post-notice,
@@ -94,7 +93,7 @@
 
 .topic-map {
   border: 1px solid var(--primary-low);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
 }
 
 .topic-map .topic-map__contents {

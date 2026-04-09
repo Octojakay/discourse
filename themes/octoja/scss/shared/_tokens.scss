@@ -11,24 +11,24 @@
   --octo-font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   --octo-topbar-height: 3rem;
-  --octo-control-height: 1.75rem;
-  --octo-control-height-sm: 1.5rem;
-  --octo-row-height: 2.5rem;
-  --octo-sidebar-width: 17rem;
+  --octo-control-height: 2rem;
+  --octo-control-height-sm: 1.75rem;
+  --octo-row-height: 2.75rem;
+  --octo-sidebar-width: 16rem;
 
   --d-border-radius: var(--octo-r);
   --d-sidebar-width: var(--octo-sidebar-width);
-  --d-sidebar-row-height: 1.9rem;
-  --d-sidebar-row-horizontal-padding: 0.375rem;
-  --sidebar-section-wrapper-padding: 1rem 0.5rem 0.875rem;
+  --d-sidebar-row-height: 2rem;
+  --d-sidebar-row-horizontal-padding: 0.5rem;
+  --sidebar-section-wrapper-padding: 0.875rem 0.5rem 0.75rem;
 
   --d-sidebar-background: var(--octo-sidebar-surface);
   --d-sidebar-border-color: var(--primary-low);
   --d-sidebar-header-font-weight: 600;
-  --d-sidebar-highlight-background: var(--octo-brand-soft);
+  --d-sidebar-highlight-background: var(--octo-surface-2);
   --d-sidebar-highlight-color: var(--primary-high);
   --d-sidebar-active-background: var(--octo-brand-soft);
-  --d-sidebar-active-color: var(--tertiary);
+  --d-sidebar-active-color: var(--primary);
   --d-sidebar-active-icon-color: var(--tertiary);
   --d-sidebar-active-font-weight: 500;
 

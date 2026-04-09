@@ -1,19 +1,22 @@
-$octo-surface-1: dark-light-choose(#fafafa, #202020);
-$octo-surface-2: dark-light-choose(#f5f5f5, #262626);
-$octo-surface-3: dark-light-choose(#ececec, #2e2e2e);
-$octo-muted-surface: dark-light-choose(#f7f7f7, #242424);
-$octo-header-surface: dark-light-choose(rgba(255, 255, 255, 0.92), rgba(26, 26, 26, 0.92));
-$octo-sidebar-surface: dark-light-choose(#fcfcfc, #202020);
-$octo-border-strong: dark-light-choose(#d9d9d9, #3a3a3a);
+$octo-app-bg: dark-light-choose(#f6f6f8, #101012);
+$octo-surface-1: dark-light-choose(#ffffff, #141416);
+$octo-surface-2: dark-light-choose(#f8f8fb, #18181b);
+$octo-surface-3: dark-light-choose(#f1f1f5, #1d1d21);
+$octo-muted-surface: dark-light-choose(#f4f4f8, #16161a);
+$octo-header-surface: dark-light-choose(rgba(255, 255, 255, 0.96), rgba(16, 16, 18, 0.96));
+$octo-sidebar-surface: dark-light-choose(#fbfbfd, #17171a);
+$octo-border-strong: dark-light-choose(#dddde6, #323238);
 $octo-brand-soft: dark-light-choose(rgba(123, 97, 255, 0.10), rgba(123, 97, 255, 0.16));
-$octo-brand-soft-strong: dark-light-choose(rgba(123, 97, 255, 0.16), rgba(123, 97, 255, 0.26));
+$octo-brand-soft-strong: dark-light-choose(rgba(123, 97, 255, 0.16), rgba(123, 97, 255, 0.24));
 $octo-warning-soft: dark-light-choose(rgba(245, 158, 11, 0.14), rgba(245, 158, 11, 0.20));
 $octo-danger-soft: dark-light-choose(rgba(239, 68, 68, 0.10), rgba(239, 68, 68, 0.18));
 $octo-info-soft: dark-light-choose(rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.18));
 $octo-chart-neutral: dark-light-choose(#c0c0c0, #4a4a4a);
-$octo-shadow-soft: dark-light-choose(rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.32));
+$octo-row-hover: dark-light-choose(#f7f6fe, #191924);
+$octo-shadow-soft: dark-light-choose(rgba(15, 23, 42, 0.04), rgba(0, 0, 0, 0.22));
 
 :root {
+  --octo-app-bg: #{$octo-app-bg};
   --octo-surface-1: #{$octo-surface-1};
   --octo-surface-2: #{$octo-surface-2};
   --octo-surface-3: #{$octo-surface-3};
@@ -28,6 +31,7 @@ $octo-shadow-soft: dark-light-choose(rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.32)
   --octo-danger-soft: #{$octo-danger-soft};
   --octo-info-soft: #{$octo-info-soft};
   --octo-chart-neutral: #{$octo-chart-neutral};
+  --octo-row-hover: #{$octo-row-hover};
   --octo-shadow-soft: #{$octo-shadow-soft};
 
   --octo-status-online: #22c55e;

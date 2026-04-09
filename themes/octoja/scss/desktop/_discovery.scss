@@ -7,15 +7,15 @@
 }
 
 .list-controls {
-  margin-bottom: 16px;
-  padding: 10px 12px;
+  margin-bottom: 14px;
+  padding: 8px 10px;
   border: 1px solid var(--primary-low);
   background: var(--octo-surface-1);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
 }
 
 .list-controls .container {
-  gap: 12px;
+  gap: 10px;
 }
 
 .navigation-container,
@@ -30,20 +30,20 @@
   border: 1px solid var(--primary-low);
   border-radius: var(--octo-r-lg);
   background: var(--octo-surface-1);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
   overflow: hidden;
 }
 
 .latest-topic-list .table-heading,
 .top-topic-list .table-heading {
-  padding: 10px 12px;
-  background: var(--octo-muted-surface);
+  padding: 10px 14px;
+  background: var(--octo-surface-1);
   border-bottom: 1px solid var(--primary-low);
   color: var(--primary-medium);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .topic-list {
@@ -53,24 +53,25 @@
   background: var(--octo-surface-1);
   border: 1px solid var(--primary-low);
   border-radius: var(--octo-r-lg);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
   overflow: hidden;
 }
 
 .topic-list th {
-  height: 36px;
-  padding: 0 10px;
-  background: var(--octo-muted-surface);
+  height: 40px;
+  padding: 0 14px;
+  background: var(--octo-surface-1);
   border-bottom: 1px solid var(--primary-low);
   color: var(--primary-medium);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .topic-list td {
-  padding: 10px;
+  height: var(--octo-row-height);
+  padding: 0 14px;
   vertical-align: middle;
 }
 
@@ -92,23 +93,23 @@
 
 .topic-list-item:hover,
 .latest-topic-list-item:hover {
-  background: var(--octo-muted-surface);
+  background: var(--octo-row-hover);
 }
 
 .topic-list-item.unseen,
 .topic-list-item.has-unread,
 .topic-list-item.new-topic {
-  box-shadow: inset 3px 0 0 var(--octo-status-info);
+  box-shadow: inset 2px 0 0 var(--octo-status-info);
 }
 
 .topic-list-item.pinned {
-  box-shadow: inset 3px 0 0 var(--tertiary);
+  box-shadow: inset 2px 0 0 var(--tertiary);
 }
 
 .topic-list .main-link .title,
 .latest-topic-list-item .main-link .title {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.90625rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -118,7 +119,7 @@
 }
 
 .latest-topic-list-item {
-  padding: 10px 12px;
+  padding: 10px 14px;
   gap: 12px;
 }
 
@@ -144,11 +145,11 @@
   gap: 8px;
   flex-wrap: wrap;
   color: var(--primary-medium);
-  font-size: 0.75rem;
+  font-size: 0.78125rem;
 }
 
 .latest-topic-list-item .topic-stats {
-  font-size: 0.75rem;
+  font-size: 0.78125rem;
   color: var(--primary-medium);
 }
 
@@ -167,7 +168,7 @@
 .topic-list .posts,
 .topic-list .badge-posts {
   color: var(--primary-medium);
-  font-size: 0.75rem;
+  font-size: 0.78125rem;
   font-variant-numeric: tabular-nums;
 }
 
@@ -200,7 +201,7 @@
   border: 1px solid var(--primary-low);
   background: var(--octo-surface-1);
   border-radius: var(--octo-r-lg);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
 }
 
 .category-list tbody tr,
@@ -258,5 +259,48 @@
   border: 1px solid var(--primary-low);
   border-radius: var(--octo-r-lg);
   background: var(--octo-surface-1);
-  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+  box-shadow: none;
+}
+
+.welcome-banner {
+  margin-bottom: 8px;
+  background: transparent;
+  border: 0;
+}
+
+.welcome-banner .custom-search-banner-wrap.welcome-banner__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0 8px;
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+
+.welcome-banner .welcome-banner__title {
+  max-width: 34rem;
+  color: var(--primary);
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+.welcome-banner .welcome-banner__subheader {
+  margin-top: 6px;
+  color: var(--primary-medium);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.welcome-banner .welcome-banner__search-menu {
+  width: min(32rem, 100%);
+}
+
+.welcome-banner .welcome-banner__search-menu,
+.welcome-banner .welcome-banner__search-menu .search-menu,
+.welcome-banner .welcome-banner__search-menu .search-container,
+.welcome-banner .welcome-banner__search-menu .search-input-wrapper {
+  width: 100%;
 }

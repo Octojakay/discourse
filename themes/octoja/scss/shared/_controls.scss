@@ -1,14 +1,14 @@
 .btn {
   height: var(--octo-control-height);
-  padding: 0 8px;
+  padding: 0 10px;
   border-radius: var(--octo-r-md);
   font-family: var(--octo-font-sans);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.625;
+  line-height: 1.4;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease, opacity 120ms ease;
 }
 
@@ -80,7 +80,7 @@ textarea,
   border-radius: var(--octo-r-md);
   color: var(--primary);
   font-family: var(--octo-font-sans);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
@@ -94,7 +94,7 @@ input[type="number"],
 .search-input,
 #search-term {
   height: var(--octo-control-height);
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 textarea {
