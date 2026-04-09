@@ -5,7 +5,7 @@ import DButton from "discourse/components/d-button";
 import { i18n } from "discourse-i18n";
 import { themePrefix } from "virtual:theme";
 
-export default class OctojaModeToggle extends Component {
+export default class OctojaHeaderModeToggle extends Component {
   @service interfaceColor;
 
   get lightSchemeLink() {
@@ -17,7 +17,10 @@ export default class OctojaModeToggle extends Component {
   }
 
   get shouldRender() {
-    return !!this.lightSchemeLink && !!this.darkSchemeLink;
+    return (
+      this.interfaceColor.selectorAvailable ||
+      (!!this.lightSchemeLink && !!this.darkSchemeLink)
+    );
   }
 
   get isDark() {
@@ -49,13 +52,15 @@ export default class OctojaModeToggle extends Component {
 
   <template>
     {{#if this.shouldRender}}
-      <DButton
-        @action={{this.toggleMode}}
-        @icon={{this.icon}}
-        @translatedTitle={{this.title}}
-        @translatedAriaLabel={{this.title}}
-        class="btn-flat sidebar-footer-actions-button octoja-mode-toggle"
-      />
+      <li class="header-dropdown-toggle octoja-header-mode-toggle">
+        <DButton
+          @action={{this.toggleMode}}
+          @icon={{this.icon}}
+          @translatedTitle={{this.title}}
+          @translatedAriaLabel={{this.title}}
+          class="btn no-text btn-icon btn-flat icon octoja-header-mode-toggle__button"
+        />
+      </li>
     {{/if}}
   </template>
 }

@@ -6,7 +6,7 @@ import DButton from "discourse/components/d-button";
 import { i18n } from "discourse-i18n";
 import { themePrefix } from "virtual:theme";
 
-export default class OctojaSidebarCollapse extends Component {
+export default class OctojaSidebarEdgeToggle extends Component {
   @service site;
 
   get applicationController() {
@@ -14,7 +14,7 @@ export default class OctojaSidebarCollapse extends Component {
   }
 
   get shouldRender() {
-    return this.site.desktopView && this.applicationController?.showSidebar;
+    return this.site.desktopView && this.applicationController?.sidebarEnabled;
   }
 
   get sidebarCollapsed() {
@@ -23,6 +23,12 @@ export default class OctojaSidebarCollapse extends Component {
 
   get icon() {
     return this.sidebarCollapsed ? "chevron-right" : "chevron-left";
+  }
+
+  get wrapperClass() {
+    return this.sidebarCollapsed
+      ? "octoja-sidebar-edge-toggle is-collapsed"
+      : "octoja-sidebar-edge-toggle";
   }
 
   get title() {
@@ -40,15 +46,17 @@ export default class OctojaSidebarCollapse extends Component {
 
   <template>
     {{#if this.shouldRender}}
-      <DButton
-        @action={{this.toggleSidebar}}
-        @icon={{this.icon}}
-        @translatedTitle={{this.title}}
-        @translatedAriaLabel={{this.title}}
-        @ariaExpanded={{if this.sidebarCollapsed false true}}
-        @ariaControls="d-sidebar"
-        class="btn-flat sidebar-footer-actions-button sidebar-collapse-trigger octoja-sidebar-collapse"
-      />
+      <div class={{this.wrapperClass}}>
+        <DButton
+          @action={{this.toggleSidebar}}
+          @icon={{this.icon}}
+          @translatedTitle={{this.title}}
+          @translatedAriaLabel={{this.title}}
+          @ariaExpanded={{if this.sidebarCollapsed false true}}
+          @ariaControls="d-sidebar"
+          class="btn no-text btn-icon btn-flat octoja-sidebar-edge-toggle__button"
+        />
+      </div>
     {{/if}}
   </template>
 }

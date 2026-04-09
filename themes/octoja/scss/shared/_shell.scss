@@ -37,6 +37,18 @@ header.d-header {
   background: var(--octo-brand-soft);
 }
 
+.d-header-icons .octoja-header-mode-toggle__button.btn {
+  border: 1px solid var(--primary-low);
+  background: var(--octo-surface-2);
+  color: var(--primary);
+}
+
+.d-header-icons .octoja-header-mode-toggle__button.btn:hover {
+  background: var(--octo-brand-soft);
+  border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
+  color: var(--tertiary);
+}
+
 .d-header .btn {
   box-shadow: none;
 }
@@ -162,42 +174,38 @@ header.d-header {
   justify-content: center;
 }
 
-.sidebar-footer-wrapper .octoja-mode-toggle.btn,
-.sidebar-footer-wrapper .octoja-sidebar-collapse.btn,
-.sidebar-footer-wrapper .sidebar-collapse-trigger.btn {
-  border: 1px solid var(--primary-low);
-  background: var(--octo-surface-2);
-  color: var(--primary);
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.02);
-}
-
-.sidebar-footer-wrapper .octoja-mode-toggle.btn:hover,
-.sidebar-footer-wrapper .octoja-sidebar-collapse.btn:hover,
-.sidebar-footer-wrapper .sidebar-collapse-trigger.btn:hover {
-  background: var(--octo-brand-soft);
-  border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
-  color: var(--tertiary);
-}
-
 .sidebar-footer-wrapper .sidebar-footer-link {
   min-height: var(--octo-control-height);
   border-radius: var(--octo-r-sm);
 }
 
-.sidebar-collapse-trigger.btn,
-.sidebar-collapse-trigger .btn {
-  width: var(--octo-control-height);
-  height: var(--octo-control-height);
-  padding: 0;
-  border: none;
-  border-radius: var(--octo-r-sm);
-  background: transparent;
-  color: var(--primary-medium);
+.octoja-sidebar-edge-toggle {
+  position: fixed;
+  top: calc(var(--header-offset, var(--octo-topbar-height)) + 0.75rem);
+  inset-inline-start: calc(var(--d-sidebar-width) - 0.875rem);
+  z-index: 401;
+  transition: inset-inline-start 180ms ease;
 }
 
-.sidebar-collapse-trigger.btn:hover,
-.sidebar-collapse-trigger .btn:hover {
+.octoja-sidebar-edge-toggle.is-collapsed {
+  inset-inline-start: 0.75rem;
+}
+
+.octoja-sidebar-edge-toggle__button.btn {
+  width: var(--octo-control-height);
+  min-width: var(--octo-control-height);
+  height: var(--octo-control-height);
+  padding: 0;
+  border: 1px solid var(--primary-low);
+  border-radius: 999px;
+  background: var(--octo-surface-1);
+  color: var(--primary);
+  box-shadow: 0 8px 22px rgb(0 0 0 / 0.18);
+}
+
+.octoja-sidebar-edge-toggle__button.btn:hover {
   background: var(--octo-brand-soft);
+  border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
   color: var(--tertiary);
 }
 

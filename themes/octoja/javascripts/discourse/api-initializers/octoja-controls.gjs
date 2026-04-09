@@ -1,8 +1,10 @@
 import { apiInitializer } from "discourse/lib/api";
-import OctojaModeToggle from "../components/octoja-mode-toggle";
-import OctojaSidebarCollapse from "../components/octoja-sidebar-collapse";
+import OctojaHeaderModeToggle from "../components/octoja-header-mode-toggle";
+import OctojaSidebarEdgeToggle from "../components/octoja-sidebar-edge-toggle";
 
 export default apiInitializer((api) => {
-  api.renderInOutlet("sidebar-footer-actions", OctojaModeToggle);
-  api.renderInOutlet("sidebar-footer-actions", OctojaSidebarCollapse);
+  api.headerIcons.add("octoja-dark-mode", OctojaHeaderModeToggle, {
+    before: "user-menu",
+  });
+  api.renderInOutlet("before-main-outlet", OctojaSidebarEdgeToggle);
 });
