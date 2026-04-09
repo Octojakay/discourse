@@ -213,10 +213,10 @@ body:not(.has-sidebar-page) #main-outlet {
   padding: 0;
   border: 1px solid var(--primary-low);
   border-radius: 999px;
-  background: var(--octo-surface-2);
+  background: var(--octo-surface-2) !important;
   color: var(--primary);
   box-shadow: 0 8px 22px rgb(0 0 0 / 0.18);
-  opacity: 1;
+  opacity: 1 !important;
   pointer-events: auto;
 }
 
@@ -225,16 +225,17 @@ body:not(.has-sidebar-page) #main-outlet {
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {
-  background: var(--octo-surface-2);
+  background: var(--octo-surface-2) !important;
   border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
   color: var(--tertiary);
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .octoja-sidebar-edge-toggle__button.btn:focus,
 .octoja-sidebar-edge-toggle__button.btn:focus-visible,
 .octoja-sidebar-edge-toggle__button.btn:active {
-  opacity: 1;
+  background: var(--octo-surface-2) !important;
+  opacity: 1 !important;
 }
 
 .nav-pills {
