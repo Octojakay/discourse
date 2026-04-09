@@ -1,0 +1,44 @@
+.topic-post,
+.user-card,
+.badge-card,
+.about .stats,
+.group-box,
+.topic-map {
+  background: var(--octo-surface-1);
+  border-radius: var(--octo-r-lg);
+  box-shadow: 0 0 0 1px var(--primary-low), 0 1px 2px var(--octo-shadow-soft);
+}
+
+.admin-controls,
+.nav-stacked,
+.admin-main-nav,
+.admin-controls .controls,
+.admin-controls nav {
+  background: var(--octo-surface-2);
+}
+
+.nav-stacked {
+  border-radius: var(--octo-r-lg);
+}
+
+.nav-stacked li {
+  border-color: var(--primary-low);
+}
+
+.nav-stacked a:hover {
+  background: var(--octo-brand-soft);
+  color: var(--tertiary);
+}
+
+.admin-controls,
+.admin-main-nav,
+.admin-content,
+.dashboard-next {
+  border-radius: var(--octo-r-lg);
+}
+
+.admin-main-nav .nav-pills,
+.admin-controls .nav-pills {
+  background: transparent;
+  padding: 0;
+}

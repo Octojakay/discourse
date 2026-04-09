@@ -1,0 +1,38 @@
+$octo-surface-1: dark-light-choose(#fafafa, #202020);
+$octo-surface-2: dark-light-choose(#f5f5f5, #262626);
+$octo-surface-3: dark-light-choose(#ececec, #2e2e2e);
+$octo-muted-surface: dark-light-choose(#f7f7f7, #242424);
+$octo-header-surface: dark-light-choose(rgba(255, 255, 255, 0.92), rgba(26, 26, 26, 0.92));
+$octo-sidebar-surface: dark-light-choose(#fcfcfc, #202020);
+$octo-border-strong: dark-light-choose(#d9d9d9, #3a3a3a);
+$octo-brand-soft: dark-light-choose(rgba(123, 97, 255, 0.10), rgba(123, 97, 255, 0.16));
+$octo-brand-soft-strong: dark-light-choose(rgba(123, 97, 255, 0.16), rgba(123, 97, 255, 0.26));
+$octo-warning-soft: dark-light-choose(rgba(245, 158, 11, 0.14), rgba(245, 158, 11, 0.20));
+$octo-danger-soft: dark-light-choose(rgba(239, 68, 68, 0.10), rgba(239, 68, 68, 0.18));
+$octo-info-soft: dark-light-choose(rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.18));
+$octo-chart-neutral: dark-light-choose(#c0c0c0, #4a4a4a);
+$octo-shadow-soft: dark-light-choose(rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.32));
+
+:root {
+  --octo-surface-1: #{$octo-surface-1};
+  --octo-surface-2: #{$octo-surface-2};
+  --octo-surface-3: #{$octo-surface-3};
+  --octo-muted-surface: #{$octo-muted-surface};
+  --octo-header-surface: #{$octo-header-surface};
+  --octo-sidebar-surface: #{$octo-sidebar-surface};
+  --octo-border-strong: #{$octo-border-strong};
+
+  --octo-brand-soft: #{$octo-brand-soft};
+  --octo-brand-soft-strong: #{$octo-brand-soft-strong};
+  --octo-warning-soft: #{$octo-warning-soft};
+  --octo-danger-soft: #{$octo-danger-soft};
+  --octo-info-soft: #{$octo-info-soft};
+  --octo-chart-neutral: #{$octo-chart-neutral};
+  --octo-shadow-soft: #{$octo-shadow-soft};
+
+  --octo-status-online: #22c55e;
+  --octo-status-warning: #f59e0b;
+  --octo-status-error: #ef4444;
+  --octo-status-info: #3b82f6;
+  --octo-status-offline: #9ca3af;
+}

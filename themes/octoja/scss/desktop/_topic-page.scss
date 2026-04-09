@@ -1,0 +1,138 @@
+.topic-area {
+  gap: 20px;
+}
+
+#topic-title {
+  margin-bottom: 14px;
+}
+
+#topic-title .category-breadcrumb,
+#topic-title .discourse-tags {
+  margin-bottom: 10px;
+}
+
+#topic-title h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.topic-post {
+  border: 1px solid var(--primary-low);
+  border-radius: var(--octo-r-lg);
+  box-shadow: none;
+  background: var(--octo-surface-1);
+  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+}
+
+.topic-post article {
+  padding: 18px;
+}
+
+.topic-body {
+  width: 100%;
+}
+
+.topic-avatar {
+  padding-top: 16px;
+}
+
+.small-action {
+  margin: 16px 0;
+  border: 1px dashed var(--primary-low);
+  border-radius: var(--octo-r-lg);
+  background: var(--octo-surface-1);
+  padding: 10px 14px;
+}
+
+.small-action .small-action-desc {
+  color: var(--primary-medium);
+  font-size: 0.75rem;
+}
+
+.topic-map,
+.timeline-container .topic-timeline,
+.timeline-container .timeline-scrollarea {
+  background: var(--octo-surface-1);
+  border-radius: var(--octo-r-lg);
+}
+
+.timeline-container .topic-timeline {
+  border: 1px solid var(--primary-low);
+  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+}
+
+.post-notice,
+.notice {
+  border-left: 3px solid var(--octo-status-info);
+  border-radius: 0 var(--octo-r-sm) var(--octo-r-sm) 0;
+  background: var(--octo-info-soft);
+}
+
+.topic-status-info,
+.post-info,
+.whisper {
+  color: var(--primary-medium);
+}
+
+.topic-post .topic-meta-data {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--primary-very-low);
+}
+
+.topic-post .topic-meta-data .post-info,
+.topic-post .topic-meta-data .names {
+  font-size: 0.75rem;
+}
+
+.topic-post .post-controls {
+  padding-top: 10px;
+  border-top: 1px solid var(--primary-very-low);
+}
+
+.topic-map {
+  border: 1px solid var(--primary-low);
+  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+}
+
+.topic-map .topic-map__contents {
+  padding: 12px 14px;
+}
+
+.timeline-container .timeline-scrollarea {
+  border-left: 1px solid var(--primary-low);
+}
+
+.timeline-container .timeline-handle {
+  background: var(--tertiary);
+  border-radius: 999px;
+}
+
+.timeline-container .timeline-date-wrapper,
+.timeline-container .timeline-ago,
+.timeline-container .timeline-replies {
+  font-size: 0.6875rem;
+  color: var(--primary-medium);
+}
+
+.topic-navigation {
+  gap: 12px;
+}
+
+.suggested-topics-message {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px dashed var(--primary-low);
+  border-radius: var(--octo-r-lg);
+  background: var(--octo-surface-1);
+}
+
+nav.post-controls .btn,
+.paginator .btn,
+.topic-list .btn.load-more {
+  min-width: 28px;
+  height: 28px;
+  border-radius: var(--octo-r-sm);
+}

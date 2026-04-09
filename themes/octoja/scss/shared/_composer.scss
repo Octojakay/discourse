@@ -1,0 +1,46 @@
+#reply-control {
+  background: var(--octo-surface-1);
+  border-radius: var(--octo-r-lg) var(--octo-r-lg) 0 0;
+  box-shadow: 0 0 0 1px var(--primary-low), 0 -8px 24px var(--octo-shadow-soft);
+}
+
+.d-editor-textarea-wrapper {
+  border: 1px solid var(--primary-low);
+  border-radius: var(--octo-r-md);
+  background: var(--octo-surface-1);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.d-editor-textarea-wrapper:focus-within {
+  border-color: var(--tertiary);
+  box-shadow: 0 0 0 2px var(--tertiary-medium);
+}
+
+.d-editor-button-bar {
+  border-bottom: 1px solid var(--primary-low);
+  background: var(--octo-surface-2);
+}
+
+.d-editor-button-bar .btn {
+  min-height: var(--octo-control-height-sm);
+  border: none;
+  background: transparent;
+}
+
+.d-editor-button-bar .btn:hover {
+  background: var(--octo-brand-soft);
+}
+
+.save-or-cancel {
+  border-top: 1px solid var(--primary-low);
+  background: var(--octo-surface-2);
+}
+
+.composer-popup,
+.education-message {
+  border: 1px solid var(--primary-low);
+  border-radius: var(--octo-r-md);
+  background: var(--octo-surface-1);
+  padding: 12px 16px;
+  font-size: 0.75rem;
+}

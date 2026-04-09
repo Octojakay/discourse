@@ -1,0 +1,26 @@
+.d-header .wrap {
+  padding: 0 12px;
+}
+
+.sidebar-wrapper {
+  border-right: none;
+  border-top: 1px solid var(--primary-low);
+}
+
+.sidebar-wrapper .sidebar-container {
+  background: var(--octo-sidebar-surface);
+}
+
+.nav-pills {
+  flex-wrap: wrap;
+}
+
+.d-modal__container,
+.modal-inner-container {
+  width: calc(100vw - 16px);
+  max-width: calc(100vw - 16px);
+}
+
+#reply-control {
+  border-radius: var(--octo-r-lg) var(--octo-r-lg) 0 0;
+}

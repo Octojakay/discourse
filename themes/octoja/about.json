@@ -1,0 +1,33 @@
+{
+  "name": "octoja",
+  "about_url": null,
+  "license_url": null,
+  "color_schemes": {
+    "octoja Dark": {
+      "primary": "FAFAFA",
+      "secondary": "1A1A1A",
+      "tertiary": "7B61FF",
+      "quaternary": "A89FFF",
+      "header_background": "202020",
+      "header_primary": "FAFAFA",
+      "highlight": "2D2460",
+      "danger": "EF4444",
+      "success": "22C55E",
+      "love": "7B61FF",
+      "selected": "2D2460"
+    },
+    "octoja Light": {
+      "primary": "1A1A1A",
+      "secondary": "FFFFFF",
+      "tertiary": "7B61FF",
+      "quaternary": "6B50F0",
+      "header_background": "FFFFFF",
+      "header_primary": "1A1A1A",
+      "highlight": "EDE9FF",
+      "danger": "EF4444",
+      "success": "16A34A",
+      "love": "7B61FF",
+      "selected": "EDE9FF"
+    }
+  }
+}

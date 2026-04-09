@@ -1,0 +1,39 @@
+.list-controls {
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.topic-list {
+  border: none;
+  background: transparent;
+}
+
+.topic-list-item,
+.latest-topic-list-item {
+  display: block;
+  margin-bottom: 12px;
+  border: 1px solid var(--primary-low);
+  border-radius: var(--octo-r-lg);
+  background: var(--octo-surface-1);
+  box-shadow: 0 1px 2px var(--octo-shadow-soft);
+}
+
+.topic-list-data {
+  padding: 12px;
+}
+
+.latest-topic-list,
+.top-topic-list {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.topic-list .main-link .title,
+.latest-topic-list-item .main-link .title {
+  font-size: 0.875rem;
+}
+
+.topic-post {
+  border-radius: var(--octo-r-lg);
+}
