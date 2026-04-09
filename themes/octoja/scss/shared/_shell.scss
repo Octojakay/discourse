@@ -182,7 +182,7 @@ header.d-header {
 .octoja-sidebar-edge-toggle {
   position: fixed;
   top: calc(var(--header-offset, var(--octo-topbar-height)) + 0.75rem);
-  inset-inline-start: calc(var(--d-sidebar-width) - 0.875rem);
+  inset-inline-start: calc(var(--d-sidebar-width) + 0.35rem);
   z-index: 401;
   transition: inset-inline-start 180ms ease;
 }

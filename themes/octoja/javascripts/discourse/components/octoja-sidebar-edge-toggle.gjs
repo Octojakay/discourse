@@ -22,7 +22,7 @@ export default class OctojaSidebarEdgeToggle extends Component {
   }
 
   get icon() {
-    return this.sidebarCollapsed ? "chevron-right" : "chevron-left";
+    return this.sidebarCollapsed ? "angles-right" : "angles-left";
   }
 
   get wrapperClass() {
