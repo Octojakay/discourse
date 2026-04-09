@@ -6,7 +6,13 @@
     "only_theme_color_schemes": true,
     "svg_icons": [
       "angles-left",
-      "angles-right"
+      "angles-right",
+      "flag",
+      "inbox",
+      "layer-group",
+      "paper-plane",
+      "user",
+      "wrench"
     ]
   },
   "color_schemes": {

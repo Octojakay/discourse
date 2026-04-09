@@ -179,9 +179,85 @@ body:not(.has-sidebar-page) #main-outlet {
   position: relative;
 }
 
-body:not(.mobile-view) #main-outlet-wrapper.wrap {
+body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
   margin-left: 0;
   margin-right: auto;
+}
+
+.octoja-collapsed-rail {
+  position: fixed;
+  top: var(--main-outlet-offset);
+  inset-inline-start: 0;
+  z-index: 399;
+  width: var(--octo-collapsed-rail-width);
+  height: calc(var(--composer-vh, 1dvh) * 100 - var(--main-outlet-offset, 0px));
+  padding: 12px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: var(--octo-sidebar-surface);
+  border-right: 1px solid var(--primary-low);
+}
+
+.octoja-collapsed-rail__brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px 6px;
+}
+
+.octoja-collapsed-rail__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.octoja-collapsed-rail__logo-fallback {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--octo-r-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--octo-brand-soft);
+  color: var(--tertiary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.octoja-collapsed-rail__links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.octoja-collapsed-rail__link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--octo-r-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-medium);
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.octoja-collapsed-rail__link:hover {
+  background: var(--octo-surface-2);
+  color: var(--primary);
+}
+
+.octoja-collapsed-rail__link.is-active {
+  background: var(--octo-brand-soft);
+  color: var(--tertiary);
+}
+
+.octoja-collapsed-rail__link .d-icon {
+  font-size: 1rem;
 }
 
 .octoja-sidebar-edge-toggle {
@@ -195,7 +271,10 @@ body:not(.mobile-view) #main-outlet-wrapper.wrap {
 }
 
 .octoja-sidebar-edge-toggle.is-collapsed {
-  transform: translateX(calc(-50% + var(--space-1)));
+  position: fixed;
+  top: calc(var(--main-outlet-offset) + 0.75rem);
+  inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.5rem);
+  transform: none;
 }
 
 .octoja-sidebar-edge-toggle__button.btn {
