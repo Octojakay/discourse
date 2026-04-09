@@ -179,6 +179,11 @@ body:not(.has-sidebar-page) #main-outlet {
   position: relative;
 }
 
+body:not(.mobile-view) #main-outlet-wrapper.wrap {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .octoja-sidebar-edge-toggle {
   position: absolute;
   top: 0.75rem;
