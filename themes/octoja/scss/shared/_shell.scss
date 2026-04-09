@@ -395,6 +395,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0.875rem;
   gap: 6px;
 }
 
@@ -474,7 +475,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 
 .octoja-sidebar-edge-toggle {
   position: fixed;
-  top: 3rem;
+  top: 3.9rem;
   inset-inline-start: calc(var(--d-sidebar-width) - 0.7rem);
   z-index: 401;
   transform: none;
@@ -484,7 +485,7 @@ body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
 
 .octoja-sidebar-edge-toggle.is-collapsed {
   position: fixed;
-  top: 3rem;
+  top: 3.9rem;
   inset-inline-start: calc(var(--octo-collapsed-rail-width) - 0.7rem);
   transform: none;
 }
