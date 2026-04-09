@@ -81,8 +81,8 @@ body:not(.mobile-view) .d-header-wrap {
 
 .octoja-sidebar-brand__logo {
   width: auto;
-  max-width: 8.5rem;
-  height: 2rem;
+  max-width: 10.5rem;
+  height: 2.4rem;
   object-fit: contain;
 }
 
@@ -224,9 +224,9 @@ body:not(.mobile-view) .sidebar-footer-wrapper {
 .octoja-sidebar-profile {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.625rem;
   min-width: 0;
-  padding: 0.5rem;
+  padding: 0.375rem 0.5rem;
   border-radius: var(--octo-r-md);
   color: var(--primary);
   transition: background 120ms ease, color 120ms ease;
@@ -245,8 +245,8 @@ body:not(.mobile-view) .sidebar-footer-wrapper {
 }
 
 .octoja-sidebar-profile__avatar .avatar {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 .octoja-sidebar-profile__text {
@@ -359,7 +359,7 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
 .octoja-collapsed-rail__footer {
   margin-top: auto;
   width: 100%;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0 1.1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -373,7 +373,7 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-medium);
+  color: var(--primary);
   transition: background 120ms ease, color 120ms ease;
 }
 
@@ -404,6 +404,14 @@ body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
   border-radius: var(--octo-r-md);
   border: 1px solid transparent;
   background: transparent;
+}
+
+.octoja-collapsed-rail__mode .interface-color-selector .btn .d-icon {
+  color: var(--primary);
+}
+
+.octoja-collapsed-rail__mode .interface-color-selector .btn:hover .d-icon {
+  color: var(--primary);
 }
 
 .octoja-collapsed-rail__mode .interface-color-selector .btn:hover,
