@@ -321,8 +321,30 @@ body:not(.has-sidebar-page) #main-outlet {
 }
 
 body.has-sidebar-page:not(.mobile-view) #main-outlet-wrapper.wrap {
-  margin-left: 0;
+  max-width: var(--d-max-width);
+  margin-left: auto;
   margin-right: auto;
+  grid-template-columns: 0 minmax(0, 1fr) !important;
+  gap: 0 !important;
+}
+
+body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper {
+  position: fixed;
+  inset-inline-start: 0;
+  top: 0;
+  width: var(--d-sidebar-width);
+  z-index: 398;
+}
+
+body.has-sidebar-page:not(.mobile-view) .sidebar-wrapper:empty {
+  width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.sidebar-animate #main-outlet-wrapper,
+  body.sidebar-animate .d-header-wrap .wrap {
+    transition: none !important;
+  }
 }
 
 .octoja-collapsed-rail {
