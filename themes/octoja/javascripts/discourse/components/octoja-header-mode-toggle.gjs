@@ -222,6 +222,10 @@ export default class OctojaHeaderModeToggle extends Component {
     );
   }
 
+  get hasLoadedStylesheetPair() {
+    return this.lightStylesheets.length > 0 && this.darkStylesheets.length > 0;
+  }
+
   get isDark() {
     const schemeType =
       getComputedStyle(document.documentElement).getPropertyValue("--scheme-type") ||
@@ -262,6 +266,11 @@ export default class OctojaHeaderModeToggle extends Component {
   }
 
   async ensureThemeStylesheets() {
+    if (this.hasLoadedStylesheetPair) {
+      this.session.set("darkModeAvailable", true);
+      return true;
+    }
+
     if (!this.hasThemeSchemePair) {
       return false;
     }
@@ -286,7 +295,7 @@ export default class OctojaHeaderModeToggle extends Component {
 
     this.session.set("darkModeAvailable", true);
 
-    return true;
+    return this.hasLoadedStylesheetPair;
   }
 
   applyMode(targetMode) {
@@ -313,8 +322,13 @@ export default class OctojaHeaderModeToggle extends Component {
       return;
     }
 
-    updateColorSchemeCookie(this.lightSchemeId);
-    updateColorSchemeCookie(this.darkSchemeId, { dark: true });
+    if (this.lightSchemeId) {
+      updateColorSchemeCookie(this.lightSchemeId);
+    }
+
+    if (this.darkSchemeId) {
+      updateColorSchemeCookie(this.darkSchemeId, { dark: true });
+    }
 
     this.applyMode(this.isDark ? "light" : "dark");
   }

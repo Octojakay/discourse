@@ -197,7 +197,7 @@ body:not(.has-sidebar-page) #main-outlet {
   top: 0.75rem;
   inset-inline-start: 0;
   z-index: 401;
-  transform: translateX(calc(-100% - 0.625rem));
+  transform: translateX(calc(-100% - 1rem));
   transition: transform 180ms ease;
   pointer-events: none;
 }
@@ -213,9 +213,10 @@ body:not(.has-sidebar-page) #main-outlet {
   padding: 0;
   border: 1px solid var(--primary-low);
   border-radius: 999px;
-  background: var(--octo-surface-1);
+  background: var(--octo-surface-2);
   color: var(--primary);
   box-shadow: 0 8px 22px rgb(0 0 0 / 0.18);
+  opacity: 1;
   pointer-events: auto;
 }
 
