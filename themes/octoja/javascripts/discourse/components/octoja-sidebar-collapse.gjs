@@ -14,7 +14,7 @@ export default class OctojaSidebarCollapse extends Component {
   }
 
   get shouldRender() {
-    return this.site.desktopView && this.applicationController?.sidebarEnabled;
+    return this.site.desktopView && this.applicationController?.showSidebar;
   }
 
   get sidebarCollapsed() {

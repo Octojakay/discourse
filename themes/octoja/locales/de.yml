@@ -1,5 +1,7 @@
 de:
   collapse_sidebar: "Seitenleiste einklappen"
   expand_sidebar: "Seitenleiste ausklappen"
+  switch_to_dark: "In den Dark Mode wechseln"
+  switch_to_light: "In den Light Mode wechseln"
   theme_metadata:
     description: "Ein Discourse-Theme, das sich visuell staerker am octoja-RMM-Produkt orientiert."

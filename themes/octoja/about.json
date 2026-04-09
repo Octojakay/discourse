@@ -2,6 +2,14 @@
   "name": "octoja",
   "about_url": null,
   "license_url": null,
+  "modifiers": {
+    "svg_icons": [
+      "sun",
+      "moon",
+      "chevron-left",
+      "chevron-right"
+    ]
+  },
   "color_schemes": {
     "octoja Dark": {
       "primary": "FAFAFA",
