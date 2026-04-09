@@ -187,21 +187,23 @@ header.d-header {
   border-radius: var(--octo-r-sm);
 }
 
-body.has-sidebar-page #main-outlet-wrapper {
+body.has-sidebar-page #main-outlet,
+body:not(.has-sidebar-page) #main-outlet {
   position: relative;
 }
 
 .octoja-sidebar-edge-toggle {
   position: absolute;
-  top: calc(var(--header-offset, var(--octo-topbar-height)) + 0.75rem);
-  inset-inline-start: calc(var(--d-sidebar-width) + var(--space-2));
+  top: 0.75rem;
+  inset-inline-start: 0;
   z-index: 401;
-  transition: inset-inline-start 180ms ease;
+  transform: translateX(calc(-100% - var(--space-1)));
+  transition: transform 180ms ease;
   pointer-events: none;
 }
 
 .octoja-sidebar-edge-toggle.is-collapsed {
-  inset-inline-start: var(--space-2);
+  transform: translateX(calc(-50% + var(--space-1)));
 }
 
 .octoja-sidebar-edge-toggle__button.btn {

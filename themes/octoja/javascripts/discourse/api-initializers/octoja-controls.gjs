@@ -6,5 +6,5 @@ export default apiInitializer((api) => {
   api.headerIcons.add("octoja-dark-mode", OctojaHeaderModeToggle, {
     before: "user-menu",
   });
-  api.renderInOutlet("before-main-outlet", OctojaSidebarEdgeToggle);
+  api.renderInOutlet("above-main-container", OctojaSidebarEdgeToggle);
 });

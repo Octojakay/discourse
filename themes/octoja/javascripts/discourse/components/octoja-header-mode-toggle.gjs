@@ -32,12 +32,22 @@ export default class OctojaHeaderModeToggle extends Component {
     return listThemes(this.site)?.find((theme) => theme.id === currentThemeId());
   }
 
+  get lightSchemeIdFromDom() {
+    const id = parseInt(this.lightSchemeLink?.dataset?.schemeId, 10);
+    return Number.isNaN(id) ? null : id;
+  }
+
+  get darkSchemeIdFromDom() {
+    const id = parseInt(this.darkSchemeLink?.dataset?.schemeId, 10);
+    return Number.isNaN(id) ? null : id;
+  }
+
   get lightSchemeId() {
-    return this.currentTheme?.color_scheme_id;
+    return this.lightSchemeIdFromDom || this.currentTheme?.color_scheme_id;
   }
 
   get darkSchemeId() {
-    return this.currentTheme?.dark_color_scheme_id;
+    return this.darkSchemeIdFromDom || this.currentTheme?.dark_color_scheme_id;
   }
 
   get hasThemeSchemePair() {
