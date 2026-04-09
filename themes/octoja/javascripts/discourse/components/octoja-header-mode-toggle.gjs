@@ -222,8 +222,34 @@ export default class OctojaHeaderModeToggle extends Component {
     );
   }
 
+  stylesheetSchemeId(stylesheet) {
+    const id = parseInt(stylesheet?.dataset?.schemeId, 10);
+    return Number.isNaN(id) ? null : id;
+  }
+
+  matchingStylesheets(stylesheets, schemeId) {
+    if (!schemeId) {
+      return [];
+    }
+
+    return stylesheets.filter(
+      (stylesheet) => this.stylesheetSchemeId(stylesheet) === schemeId
+    );
+  }
+
+  get matchingLightStylesheets() {
+    return this.matchingStylesheets(this.lightStylesheets, this.lightSchemeId);
+  }
+
+  get matchingDarkStylesheets() {
+    return this.matchingStylesheets(this.darkStylesheets, this.darkSchemeId);
+  }
+
   get hasLoadedStylesheetPair() {
-    return this.lightStylesheets.length > 0 && this.darkStylesheets.length > 0;
+    return (
+      this.matchingLightStylesheets.length > 0 &&
+      this.matchingDarkStylesheets.length > 0
+    );
   }
 
   get isDark() {
@@ -275,7 +301,7 @@ export default class OctojaHeaderModeToggle extends Component {
       return false;
     }
 
-    if (!this.lightStylesheets.length) {
+    if (!this.matchingLightStylesheets.length) {
       await loadColorSchemeStylesheet(this.lightSchemeId, this.currentThemeIdValue);
       this.tagPreviewStylesheet(
         "cs-preview-light",
@@ -284,7 +310,7 @@ export default class OctojaHeaderModeToggle extends Component {
       );
     }
 
-    if (!this.darkStylesheets.length) {
+    if (!this.matchingDarkStylesheets.length) {
       await loadColorSchemeStylesheet(
         this.darkSchemeId,
         this.currentThemeIdValue,
@@ -300,11 +326,20 @@ export default class OctojaHeaderModeToggle extends Component {
 
   applyMode(targetMode) {
     this.lightStylesheets.forEach((stylesheet) => {
-      stylesheet.media = targetMode === "light" ? "all" : "none";
+      stylesheet.media = "none";
     });
 
     this.darkStylesheets.forEach((stylesheet) => {
-      stylesheet.media = targetMode === "dark" ? "all" : "none";
+      stylesheet.media = "none";
+    });
+
+    const activeStylesheets =
+      targetMode === "light"
+        ? this.matchingLightStylesheets
+        : this.matchingDarkStylesheets;
+
+    activeStylesheets.forEach((stylesheet) => {
+      stylesheet.media = "all";
     });
 
     if (targetMode === "light") {

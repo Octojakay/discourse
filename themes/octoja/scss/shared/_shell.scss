@@ -228,6 +228,13 @@ body:not(.has-sidebar-page) #main-outlet {
   background: var(--octo-brand-soft);
   border-color: color-mix(in srgb, var(--tertiary) 28%, var(--primary-low));
   color: var(--tertiary);
+  opacity: 1;
+}
+
+.octoja-sidebar-edge-toggle__button.btn:focus,
+.octoja-sidebar-edge-toggle__button.btn:focus-visible,
+.octoja-sidebar-edge-toggle__button.btn:active {
+  opacity: 1;
 }
 
 .nav-pills {
