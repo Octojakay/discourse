@@ -197,7 +197,7 @@ body:not(.has-sidebar-page) #main-outlet {
   top: 0.75rem;
   inset-inline-start: 0;
   z-index: 401;
-  transform: translateX(calc(-100% - var(--space-1)));
+  transform: translateX(calc(-100% - var(--space-2)));
   transition: transform 180ms ease;
   pointer-events: none;
 }
@@ -217,6 +217,10 @@ body:not(.has-sidebar-page) #main-outlet {
   color: var(--primary);
   box-shadow: 0 8px 22px rgb(0 0 0 / 0.18);
   pointer-events: auto;
+}
+
+.octoja-sidebar-edge-toggle__button.btn .d-icon {
+  transform: translateX(1px);
 }
 
 .octoja-sidebar-edge-toggle__button.btn:hover {

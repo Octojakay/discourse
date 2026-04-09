@@ -32,6 +32,32 @@ export default class OctojaHeaderModeToggle extends Component {
     return listThemes(this.site)?.find((theme) => theme.id === currentThemeId());
   }
 
+  get themeColorSchemes() {
+    const themeId = this.currentTheme?.id ?? currentThemeId();
+
+    return (this.site.user_color_schemes || []).filter(
+      (scheme) => scheme.theme_id === themeId
+    );
+  }
+
+  get resolvedLightScheme() {
+    return (
+      this.themeColorSchemes.find((scheme) => !scheme.is_dark) ||
+      this.themeColorSchemes.find(
+        (scheme) => !scheme.name.toLowerCase().includes("dark")
+      )
+    );
+  }
+
+  get resolvedDarkScheme() {
+    return (
+      this.themeColorSchemes.find((scheme) => scheme.is_dark) ||
+      this.themeColorSchemes.find((scheme) =>
+        scheme.name.toLowerCase().includes("dark")
+      )
+    );
+  }
+
   get lightSchemeIdFromDom() {
     const id = parseInt(this.lightSchemeLink?.dataset?.schemeId, 10);
     return Number.isNaN(id) ? null : id;
@@ -43,11 +69,19 @@ export default class OctojaHeaderModeToggle extends Component {
   }
 
   get lightSchemeId() {
-    return this.lightSchemeIdFromDom || this.currentTheme?.color_scheme_id;
+    return (
+      this.lightSchemeIdFromDom ||
+      this.resolvedLightScheme?.id ||
+      this.currentTheme?.color_scheme_id
+    );
   }
 
   get darkSchemeId() {
-    return this.darkSchemeIdFromDom || this.currentTheme?.dark_color_scheme_id;
+    return (
+      this.darkSchemeIdFromDom ||
+      this.resolvedDarkScheme?.id ||
+      this.currentTheme?.dark_color_scheme_id
+    );
   }
 
   get hasThemeSchemePair() {
